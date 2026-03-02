@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MALABAR KICKS | Premium Shoe Store</title>
+    <meta name="description"
+        content="Discover the exclusive collection of premium footwear at MALABAR KICKS. The ultimate destination for shoe enthusiasts.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <svg class="pencil" viewBox="0 0 200 200" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="pencil-eraser">
+                        <rect rx="5" ry="5" width="30" height="30"></rect>
+                    </clipPath>
+                </defs>
+                <circle class="pencil__stroke" r="70" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="439.82 439.82" stroke-dashoffset="439.82" stroke-linecap="round"
+                    transform="rotate(-113,100,100)" />
+                <g class="pencil__rotate" transform="translate(100,100)">
+                    <g fill="none">
+                        <circle class="pencil__body1" r="64" stroke="hsl(223,90%,50%)" stroke-width="30"
+                            stroke-dasharray="402.12 402.12" stroke-dashoffset="402" transform="rotate(-90)" />
+                        <circle class="pencil__body2" r="74" stroke="hsl(223,90%,60%)" stroke-width="10"
+                            stroke-dasharray="464.96 464.96" stroke-dashoffset="465" transform="rotate(-90)" />
+                        <circle class="pencil__body3" r="54" stroke="hsl(223,90%,40%)" stroke-width="10"
+                            stroke-dasharray="339.29 339.29" stroke-dashoffset="339" transform="rotate(-90)" />
+                    </g>
+                    <g class="pencil__eraser" transform="rotate(-90) translate(49,0)">
+                        <g class="pencil__eraser-skew">
+                            <rect fill="hsl(223,90%,70%)" rx="5" ry="5" width="30" height="30" />
+                            <rect fill="hsl(223,90%,60%)" width="5" height="30" clip-path="url(#pencil-eraser)" />
+                            <rect fill="hsl(223,10%,90%)" width="30" height="20" />
+                            <rect fill="hsl(223,10%,70%)" width="15" height="20" />
+                            <rect fill="hsl(223,10%,80%)" width="5" height="20" />
+                            <rect fill="hsla(223,10%,10%,0.2)" y="6" width="30" height="2" />
+                            <rect fill="hsla(223,10%,10%,0.2)" y="13" width="30" height="2" />
+                        </g>
+                    </g>
+                    <g class="pencil__point" transform="rotate(-90) translate(49,-30)">
+                        <polygon fill="hsl(33,90%,70%)" points="15 0,30 30,0 30" />
+                        <polygon fill="hsl(33,90%,50%)" points="15 0,6 30,0 30" />
+                        <polygon fill="hsl(223,10%,10%)" points="15 0,20 10,10 10" />
+                    </g>
+                </g>
+            </svg>
+            <div class="loading-text">
+                <img src="https://i.postimg.cc/x87Ndb4F/1000135266.png" class="loading-logo" alt="Malabar Kicks">
+                <h1 class="glitch" data-text="MALABAR KICKS">MALABAR KICKS</h1>
+                <p class="loading-subtitle">Welcome, New Model Collections Have Arrived</p>
+                <div class="loading-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (initially hidden) -->
+    <main id="main-content" class="hidden">
+        <header>
+            <nav>
+                <div class="nav-logo">
+                    <img src="https://i.postimg.cc/x87Ndb4F/1000135266.png" alt="Malabar Kicks Logo">
+                </div>
+                <div class="nav-actions">
+                    <button id="search-btn" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg></button>
+                    <button id="cart-btn" aria-label="Cart" style="position:relative;"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg><span class="cart-count" id="cart-count">0</span></button>
+                    <button id="profile-btn" aria-label="Profile"><i class='bx bxs-user-circle'
+                            style="font-size: 24px;"></i></button>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-tag">What's Trending Right Now</div>
+            <h2 class="hero-title">STEP INTO<br><span class="highlight">EXCELLENCE</span></h2>
+
+            <div class="hero-image">
+                <!-- We will use a high quality shoe image here -->
+                <img src="https://i.postimg.cc/fbpnXvYs/img349.jpg" alt="Featured Shoe" class="floating">
+            </div>
+            <div class="hero-footer">
+                <div class="price">From ₹1399.00</div>
+                <button class="cta-btn">Shop Now</button>
+            </div>
+        </section>
+
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <span class="current">Products</span>
+        </div>
+
+        <div class="shop-container">
+            <!-- Sidebar for Filters -->
+            <aside class="sidebar">
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                </div>
+                <div class="filter-section">
+                    <h4>Price</h4>
+                    <ul>
+                        <li><label><input type="checkbox" class="price-filter" value="below-500"> Below 500</label></li>
+                        <li><label><input type="checkbox" class="price-filter" value="500-1000"> 500 - 1000</label></li>
+                        <li><label><input type="checkbox" class="price-filter" value="1000-1500"> 1000 - 1500</label>
+                        </li>
+                        <li><label><input type="checkbox" class="price-filter" value="1500-2000"> 1500 - 2000</label>
+                        </li>
+                        <li><label><input type="checkbox" class="price-filter" value="above-2000"> Above 2000</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-section">
+                    <h4>Brands</h4>
+                    <ul>
+                        <li><label><input type="checkbox" class="brand-filter" value="ENV Creations"> ENV
+                                Creations</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="Nike"> Nike</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="Adidas"> Adidas</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="Puma"> Puma</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="New Balance"> New Balance</label>
+                        </li>
+                        <li><label><input type="checkbox" class="brand-filter" value="Converse"> Converse</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="Onitsuka Tiger"> Onitsuka
+                                Tiger</label></li>
+                        <li><label><input type="checkbox" class="brand-filter" value="boots"> Boots</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Product Categories</h4>
+                    <ul>
+                        <li><label><input type="radio" name="cat" checked> All Products</label></li>
+                        <li><label><input type="radio" name="cat"> Running</label></li>
+                        <li><label><input type="radio" name="cat"> Basketball</label></li>
+                        <li><label><input type="radio" name="cat"> Lifestyle</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Offers</h4>
+                    <ul>
+                        <li><label><input type="checkbox"> 10% Off</label></li>
+                        <li><label><input type="checkbox"> Special Deals</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="catalog-search" style="margin: 10px 0 14px 0;">
+                <input id="product-search" type="text" placeholder="Search shoes by name or price (example: 1200)"
+                    style="width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;">
+            </div>
+
+            <!-- Main Product Grid (rendered by script.js) -->
+            <section class="products-grid" id="products-grid"></section>
+        </div>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="testimonial-header">
+                <h2 class="testimonial-title">What our customers say</h2>
+                <p class="testimonial-subtitle">Don't Just Take Our Word for It</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="comment">"The comfort and style of these kicks are unmatched! My go-to for daily wear."
+                    </p>
+                    <h4 class="customer-name">Rahul Sharma</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <p class="comment">"Absolutely love the premium feel. The classic dark sneakers look even better in
+                        person."</p>
+                    <h4 class="customer-name">Priya Nair</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="comment">"Fits perfectly and the build quality is solid. Worth every rupee."</p>
+                    <h4 class="customer-name">Arjun Varma</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <p class="comment">"Fast delivery and great customer support. The Air Zoom Pegasus is just amazing."
+                    </p>
+                    <h4 class="customer-name">Sneha Kapoor</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Sidebar Panel -->
+        <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button id="close-cart-btn"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items will be injected here by JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <!-- Proceed to Checkout triggers Order Form via JS -->
+                <button id="checkout-btn" class="cta-btn checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+        <div id="cart-overlay" class="cart-overlay"></div>
+        <!-- Social Media Footer -->
+        <footer class="social-footer">
+            <ul class="wrapper">
+                <li class="icon facebook">
+                    <a href="#" target="_blank">
+                        <span class="tooltip">Facebook</span>
+                        <span><i class="fab fa-facebook-f"></i></span>
+                    </a>
+                </li>
+                <li class="icon twitter">
+                    <a href="#" target="_blank">
+                        <span class="tooltip">Twitter</span>
+                        <span><i class="fab fa-x-twitter"></i></span>
+                    </a>
+                </li>
+                <li class="icon instagram">
+                    <a href="https://www.instagram.com/malabar_kicks?igsh=MTNmbndmeWcxZmQ2aQ==" target="_blank">
+                        <span class="tooltip">Instagram</span>
+                        <span><i class="fab fa-instagram"></i></span>
+                    </a>
+                </li>
+                <li class="icon whatsapp">
+                    <a href="https://wa.me/919544856505" target="_blank">
+                        <span class="tooltip">WhatsApp</span>
+                        <span><i class="fab fa-whatsapp"></i></span>
+                    </a>
+                </li>
+                <li class="icon github">
+                    <a href="#" target="_blank">
+                        <span class="tooltip">Github</span>
+                        <span><i class="fab fa-github"></i></span>
+                    </a>
+                </li>
+                <li class="icon youtube">
+                    <a href="#" target="_blank">
+                        <span class="tooltip">Youtube</span>
+                        <span><i class="fab fa-youtube"></i></span>
+                    </a>
+                </li>
+            </ul>
+            <p class="footer-credit">&copy; 2026 MALABAR KICKS. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-container">
+            <div class="form-box login">
+                <form action="#">
+                    <h1>Login</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username" required />
+                        <i class="bx bxs-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required />
+                        <i class="bx bxs-lock-alt"></i>
+                    </div>
+                    <div class="forgot-link">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                    <p>or login with social platforms</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bx bxl-google"></i></a>
+                        <a href="#"><i class="bx bxl-facebook"></i></a>
+                        <a href="#"><i class="bx bxl-github"></i></a>
+                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <form action="#">
+                    <h1>Registration</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username" required />
+                        <i class="bx bxs-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email" required />
+                        <i class="bx bxs-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required />
+                        <i class="bx bxs-lock-alt"></i>
+                    </div>
+                    <button type="submit" class="auth-btn">Register</button>
+                    <p>or register with social platforms</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bx bxl-google"></i></a>
+                        <a href="#"><i class="bx bxl-facebook"></i></a>
+                        <a href="#"><i class="bx bxl-github"></i></a>
+                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="toggle-box">
+                <div class="toggle-panel toggle-left">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="auth-btn register-btn">Register</button>
+                </div>
+
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="auth-btn login-btn">Login</button>
+                </div>
+            </div>
+
+            <!-- Close Button -->
+            <button id="auth-close" class="auth-close-btn"><i class='bx bx-x'></i></button>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="auth-modal">
+        <div class="auth-container order-container">
+            <div class="form-box login" style="width: 100%; right: 0;">
+                <form id="order-form">
+                    <h1>Complete Your Order</h1>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <input type="text" id="order-name" placeholder="Full Name" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" id="order-shoe-name" placeholder="Shoe Name" readonly />
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <input type="tel" id="order-phone1" placeholder="Phone Number 1" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="tel" id="order-phone2" placeholder="Phone Number 2" />
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <input type="number" id="order-qty" placeholder="Quantity" min="1" value="1" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" id="order-size" placeholder="Shoe Size" required />
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" id="order-address1" placeholder="House Name / Building Name & No" required />
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <input type="text" id="order-address2" placeholder="Road / Area / Colony" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" id="order-pincode" placeholder="Pincode" required />
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <input type="text" id="order-city" placeholder="City" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" id="order-state" placeholder="State" required />
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; display: flex; justify-content: center;">
+                        <button type="submit" class="truck-button" id="submit-order-btn">
+                            <span class="default">Complete Order</span>
+                            <span class="success">
+                                Order Placed
+                                <svg viewBox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </svg>
+                            </span>
+                            <div class="truck">
+                                <div class="wheel"></div>
+                                <div class="back"></div>
+                                <div class="front"></div>
+                                <div class="box"></div>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <button id="order-close" class="auth-close-btn" type="button"><i class='bx bx-x'></i></button>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js'></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
