@@ -312,255 +312,274 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const brands = ['ENV Creations', 'Nike', 'Adidas', 'Puma'];
 
-    const shoeCatalog = cleanShoeImageUrls.map((image, index) => {
-        const salePrice = 599 + ((index * 73) % 2100);
+    let shoeCatalog = [];
+    const savedCatalog = localStorage.getItem('shoeCatalog');
 
-        if (index === 0) {
-            return {
-                name: 'adidas samba atoms',
-                brand: 'Adidas',
-                image,
-                salePrice: 1199,
-                originalPrice: 1599
-            };
+    if (savedCatalog) {
+        shoeCatalog = JSON.parse(savedCatalog);
+        // Normalize existing data to uppercase for consistency
+        let needsUpdate = false;
+        shoeCatalog.forEach(p => {
+            if (p.name !== p.name.toUpperCase()) {
+                p.name = p.name.toUpperCase();
+                needsUpdate = true;
+            }
+        });
+        if (needsUpdate) {
+            localStorage.setItem('shoeCatalog', JSON.stringify(shoeCatalog));
         }
+    } else {
+        shoeCatalog = cleanShoeImageUrls.map((image, index) => {
+            const salePrice = 599 + ((index * 73) % 2100);
 
-        if (index === 1) {
+            if (index === 0) {
+                return {
+                    name: 'ADIDAS SAMBA ATOMS',
+                    brand: 'Adidas',
+                    image,
+                    salePrice: 1199,
+                    originalPrice: 1599
+                };
+            }
+
+            if (index === 1) {
+                return {
+                    name: 'BOOTS',
+                    brand: 'boots',
+                    image,
+                    salePrice: 1599,
+                    originalPrice: 1999
+                };
+            }
+
+            const generatedName = `MALABAR KICKS ${String(index + 1).padStart(3, '0')}`;
+
+            const targetNames = [
+                'Malabar Kicks 090', 'Malabar Kicks 005', 'Malabar Kicks 123',
+                'Malabar Kicks 067', 'Malabar Kicks 012', 'Malabar Kicks 101',
+                'Malabar Kicks 112', 'Malabar Kicks 114', 'Malabar Kicks 057',
+                'Malabar Kicks 116', 'Malabar Kicks 081'
+            ];
+
+            if (targetNames.includes(generatedName)) {
+                return {
+                    name: 'NEW BALANCE 9060',
+                    brand: 'New Balance',
+                    image,
+                    salePrice: 1599,
+                    originalPrice: 1999
+                };
+            }
+
+            const nb1699TargetNames = [
+                'Malabar Kicks 026', 'Malabar Kicks 027', 'Malabar Kicks 028',
+                'Malabar Kicks 029', 'Malabar Kicks 030', 'Malabar Kicks 031'
+            ];
+
+            if (nb1699TargetNames.includes(generatedName)) {
+                return {
+                    name: 'NEW BALANCE 1699',
+                    brand: 'New Balance',
+                    image,
+                    salePrice: 1699,
+                    originalPrice: 1999
+                };
+            }
+
+            const converse90TargetNames = [
+                'Malabar Kicks 055', 'Malabar Kicks 056', 'Malabar Kicks 059',
+                'Malabar Kicks 060', 'Malabar Kicks 063'
+            ];
+
+            if (converse90TargetNames.includes(generatedName)) {
+                return {
+                    name: 'CONVERSE 90',
+                    brand: 'Converse',
+                    image,
+                    salePrice: 1999,
+                    originalPrice: 2499
+                };
+            }
+
+            const nikeVomeroTargetNames = [
+                'Malabar Kicks 061', 'Malabar Kicks 062', 'Malabar Kicks 064',
+                'Malabar Kicks 066', 'Malabar Kicks 086', 'Malabar Kicks 087',
+                'Malabar Kicks 088'
+            ];
+
+            if (nikeVomeroTargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE VOMERO',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 1999,
+                    originalPrice: 2499
+                };
+            }
+
+            const nb9060v2TargetNames = [
+                'Malabar Kicks 089', 'Malabar Kicks 091', 'Malabar Kicks 092',
+                'Malabar Kicks 093', 'Malabar Kicks 065', 'Malabar Kicks 094',
+                'Malabar Kicks 095', 'Malabar Kicks 070'
+            ];
+
+            if (nb9060v2TargetNames.includes(generatedName)) {
+                return {
+                    name: 'NEW BALANCE 9060',
+                    brand: 'New Balance',
+                    image,
+                    salePrice: 1799,
+                    originalPrice: 2199
+                };
+            }
+
+            const nikeSBTargetNames = ['Malabar Kicks 117', 'Malabar Kicks 118'];
+            if (nikeSBTargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE SB DUNK DERBY',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 2499,
+                    originalPrice: 2999
+                };
+            }
+
+            const adidasSambaTargetNames = ['Malabar Kicks 115'];
+            if (adidasSambaTargetNames.includes(generatedName)) {
+                return {
+                    name: 'ADIDAS SAMBA ATOMS',
+                    brand: 'Adidas',
+                    image,
+                    salePrice: 1199,
+                    originalPrice: 1599
+                };
+            }
+
+            const onitsukaTigerTargetNames = [
+                'Malabar Kicks 003', 'Malabar Kicks 124', 'Malabar Kicks 125',
+                'Malabar Kicks 126', 'Malabar Kicks 127', 'Malabar Kicks 075',
+                'Malabar Kicks 076'
+            ];
+
+            if (onitsukaTigerTargetNames.includes(generatedName)) {
+                return {
+                    name: 'ONITSUKA TIGER',
+                    brand: 'Onitsuka Tiger',
+                    image,
+                    salePrice: 1599,
+                    originalPrice: 1999
+                };
+            }
+
+            const pumaSpeedCatTargetNames = [
+                'Malabar Kicks 004', 'Malabar Kicks 006', 'Malabar Kicks 007',
+                'Malabar Kicks 128'
+            ];
+
+            if (pumaSpeedCatTargetNames.includes(generatedName)) {
+                return {
+                    name: 'PUMA SPEED CAT',
+                    brand: 'Puma',
+                    image,
+                    salePrice: 1599,
+                    originalPrice: 1999
+                };
+            }
+
+            const adidasSambaBasicTargetNames = ['Malabar Kicks 119', 'Malabar Kicks 120'];
+            if (adidasSambaBasicTargetNames.includes(generatedName)) {
+                return {
+                    name: 'ADIDAS SAMBA BASIC',
+                    brand: 'Adidas',
+                    image,
+                    salePrice: 1699,
+                    originalPrice: 1999
+                };
+            }
+
+            const pumaNewTargetNames = ['Malabar Kicks 121', 'Malabar Kicks 122'];
+            if (pumaNewTargetNames.includes(generatedName)) {
+                return {
+                    name: 'PUMA',
+                    brand: 'Puma',
+                    image,
+                    salePrice: 2499,
+                    originalPrice: 2999
+                };
+            }
+
+            const nikeStussyTargetNames = ['Malabar Kicks 008', 'Malabar Kicks 009'];
+            if (nikeStussyTargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE SB DUNK STUSSY',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 999,
+                    originalPrice: 1499
+                };
+            }
+
+            const nikeSbDunkTargetNames = [
+                'Malabar Kicks 010', 'Malabar Kicks 011', 'Malabar Kicks 013',
+                'Malabar Kicks 014', 'Malabar Kicks 017'
+            ];
+            if (nikeSbDunkTargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE SB DUNK',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 1399,
+                    originalPrice: 1799
+                };
+            }
+
+            const nikeP6000TargetNames = [
+                'Malabar Kicks 032', 'Malabar Kicks 033', 'Malabar Kicks 034',
+                'Malabar Kicks 035', 'Malabar Kicks 036', 'Malabar Kicks 037',
+                'Malabar Kicks 038'
+            ];
+            if (nikeP6000TargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE P6000',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 1699,
+                    originalPrice: 2099
+                };
+            }
+
+            const bootsTargetNames = ['Malabar Kicks 129'];
+            if (bootsTargetNames.includes(generatedName)) {
+                return {
+                    name: 'BOOTS',
+                    brand: 'boots',
+                    image,
+                    salePrice: 1599,
+                    originalPrice: 1999
+                };
+            }
+
+            const nikeBlackStussyTargetNames = ['Malabar Kicks 039', 'Malabar Kicks 068', 'Malabar Kicks 069'];
+            if (nikeBlackStussyTargetNames.includes(generatedName)) {
+                return {
+                    name: 'NIKE BLACK STUSSY',
+                    brand: 'Nike',
+                    image,
+                    salePrice: 999,
+                    originalPrice: 1499
+                };
+            }
+
             return {
-                name: 'boots',
-                brand: 'boots',
+                name: generatedName,
+                brand: brands[index % brands.length],
                 image,
-                salePrice: 1599,
-                originalPrice: 1999
+                salePrice,
+                originalPrice: salePrice + 400
             };
-        }
-
-        const generatedName = `Malabar Kicks ${String(index + 1).padStart(3, '0')}`;
-
-        const targetNames = [
-            'Malabar Kicks 090', 'Malabar Kicks 005', 'Malabar Kicks 123',
-            'Malabar Kicks 067', 'Malabar Kicks 012', 'Malabar Kicks 101',
-            'Malabar Kicks 112', 'Malabar Kicks 114', 'Malabar Kicks 057',
-            'Malabar Kicks 116', 'Malabar Kicks 081'
-        ];
-
-        if (targetNames.includes(generatedName)) {
-            return {
-                name: 'NEW BALANCE 9060',
-                brand: 'New Balance',
-                image,
-                salePrice: 1599,
-                originalPrice: 1999
-            };
-        }
-
-        const nb1699TargetNames = [
-            'Malabar Kicks 026', 'Malabar Kicks 027', 'Malabar Kicks 028',
-            'Malabar Kicks 029', 'Malabar Kicks 030', 'Malabar Kicks 031'
-        ];
-
-        if (nb1699TargetNames.includes(generatedName)) {
-            return {
-                name: 'NEW BALANCE 1699',
-                brand: 'New Balance',
-                image,
-                salePrice: 1699,
-                originalPrice: 1999
-            };
-        }
-
-        const converse90TargetNames = [
-            'Malabar Kicks 055', 'Malabar Kicks 056', 'Malabar Kicks 059',
-            'Malabar Kicks 060', 'Malabar Kicks 063'
-        ];
-
-        if (converse90TargetNames.includes(generatedName)) {
-            return {
-                name: 'converse 90',
-                brand: 'Converse',
-                image,
-                salePrice: 1999,
-                originalPrice: 2499
-            };
-        }
-
-        const nikeVomeroTargetNames = [
-            'Malabar Kicks 061', 'Malabar Kicks 062', 'Malabar Kicks 064',
-            'Malabar Kicks 066', 'Malabar Kicks 086', 'Malabar Kicks 087',
-            'Malabar Kicks 088'
-        ];
-
-        if (nikeVomeroTargetNames.includes(generatedName)) {
-            return {
-                name: 'nike VOMERO',
-                brand: 'Nike',
-                image,
-                salePrice: 1999,
-                originalPrice: 2499
-            };
-        }
-
-        const nb9060v2TargetNames = [
-            'Malabar Kicks 089', 'Malabar Kicks 091', 'Malabar Kicks 092',
-            'Malabar Kicks 093', 'Malabar Kicks 065', 'Malabar Kicks 094',
-            'Malabar Kicks 095', 'Malabar Kicks 070'
-        ];
-
-        if (nb9060v2TargetNames.includes(generatedName)) {
-            return {
-                name: 'NEW BALANCE 9060',
-                brand: 'New Balance',
-                image,
-                salePrice: 1799,
-                originalPrice: 2199
-            };
-        }
-
-        const nikeSBTargetNames = ['Malabar Kicks 117', 'Malabar Kicks 118'];
-        if (nikeSBTargetNames.includes(generatedName)) {
-            return {
-                name: 'Nike sb dunk derby',
-                brand: 'Nike',
-                image,
-                salePrice: 2499,
-                originalPrice: 2999
-            };
-        }
-
-        const adidasSambaTargetNames = ['Malabar Kicks 115'];
-        if (adidasSambaTargetNames.includes(generatedName)) {
-            return {
-                name: 'adidas samba atoms',
-                brand: 'Adidas',
-                image,
-                salePrice: 1199,
-                originalPrice: 1599
-            };
-        }
-
-        const onitsukaTigerTargetNames = [
-            'Malabar Kicks 003', 'Malabar Kicks 124', 'Malabar Kicks 125',
-            'Malabar Kicks 126', 'Malabar Kicks 127', 'Malabar Kicks 075',
-            'Malabar Kicks 076'
-        ];
-
-        if (onitsukaTigerTargetNames.includes(generatedName)) {
-            return {
-                name: 'Onitsuka Tiger',
-                brand: 'Onitsuka Tiger',
-                image,
-                salePrice: 1599,
-                originalPrice: 1999
-            };
-        }
-
-        const pumaSpeedCatTargetNames = [
-            'Malabar Kicks 004', 'Malabar Kicks 006', 'Malabar Kicks 007',
-            'Malabar Kicks 128'
-        ];
-
-        if (pumaSpeedCatTargetNames.includes(generatedName)) {
-            return {
-                name: 'puma speed cat',
-                brand: 'Puma',
-                image,
-                salePrice: 1599,
-                originalPrice: 1999
-            };
-        }
-
-        const adidasSambaBasicTargetNames = ['Malabar Kicks 119', 'Malabar Kicks 120'];
-        if (adidasSambaBasicTargetNames.includes(generatedName)) {
-            return {
-                name: 'adidas samba basic',
-                brand: 'Adidas',
-                image,
-                salePrice: 1699,
-                originalPrice: 1999
-            };
-        }
-
-        const pumaNewTargetNames = ['Malabar Kicks 121', 'Malabar Kicks 122'];
-        if (pumaNewTargetNames.includes(generatedName)) {
-            return {
-                name: 'puma',
-                brand: 'Puma',
-                image,
-                salePrice: 2499,
-                originalPrice: 2999
-            };
-        }
-
-        const nikeStussyTargetNames = ['Malabar Kicks 008', 'Malabar Kicks 009'];
-        if (nikeStussyTargetNames.includes(generatedName)) {
-            return {
-                name: 'nike sb dunk STUSSY',
-                brand: 'Nike',
-                image,
-                salePrice: 999,
-                originalPrice: 1499
-            };
-        }
-
-        const nikeSbDunkTargetNames = [
-            'Malabar Kicks 010', 'Malabar Kicks 011', 'Malabar Kicks 013',
-            'Malabar Kicks 014', 'Malabar Kicks 017'
-        ];
-        if (nikeSbDunkTargetNames.includes(generatedName)) {
-            return {
-                name: 'Nike sb dunk',
-                brand: 'Nike',
-                image,
-                salePrice: 1399,
-                originalPrice: 1799
-            };
-        }
-
-        const nikeP6000TargetNames = [
-            'Malabar Kicks 032', 'Malabar Kicks 033', 'Malabar Kicks 034',
-            'Malabar Kicks 035', 'Malabar Kicks 036', 'Malabar Kicks 037',
-            'Malabar Kicks 038'
-        ];
-        if (nikeP6000TargetNames.includes(generatedName)) {
-            return {
-                name: 'nike p6000',
-                brand: 'Nike',
-                image,
-                salePrice: 1699,
-                originalPrice: 2099
-            };
-        }
-
-        const bootsTargetNames = ['Malabar Kicks 129'];
-        if (bootsTargetNames.includes(generatedName)) {
-            return {
-                name: 'boots',
-                brand: 'boots',
-                image,
-                salePrice: 1599,
-                originalPrice: 1999
-            };
-        }
-
-        const nikeBlackStussyTargetNames = ['Malabar Kicks 039', 'Malabar Kicks 068', 'Malabar Kicks 069'];
-        if (nikeBlackStussyTargetNames.includes(generatedName)) {
-            return {
-                name: 'nike black STUSSY',
-                brand: 'Nike',
-                image,
-                salePrice: 999,
-                originalPrice: 1499
-            };
-        }
-
-        return {
-            name: generatedName,
-            brand: brands[index % brands.length],
-            image,
-            salePrice,
-            originalPrice: salePrice + 400
-        };
-    });
+        });
+        localStorage.setItem('shoeCatalog', JSON.stringify(shoeCatalog));
+    }
 
     function formatINR(amount) {
         return `₹${Number(amount).toLocaleString('en-IN')}`;
@@ -578,9 +597,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        productsGrid.innerHTML = products.map(product => `
-            <div class="product-card">
+        productsGrid.innerHTML = products.map(product => {
+            const isRecentlyUpdated = product.updatedAt && (Date.now() - product.updatedAt < 300000); // 5 mins
+            const isNew = product.isNewProduct && (Date.now() - product.createdAt < 300000);
+
+            return `
+            <div class="product-card ${isRecentlyUpdated ? 'highlight-update' : ''}">
                 <div class="product-img-container">
+                    ${isRecentlyUpdated ? '<span class="update-badge">Updated</span>' : ''}
+                    ${isNew && !isRecentlyUpdated ? '<span class="new-badge">New</span>' : ''}
                     <img src="${product.image}" alt="${product.name}">
                 </div>
                 <div class="product-info">
@@ -596,7 +621,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </div>
-        `).join('');
+        `;
+        }).join('');
     }
 
     function getCheckedValues(inputs) {
@@ -972,8 +998,141 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize
+    // --- Admin Panel Logic ---
+    const adminModal = document.getElementById('admin-modal');
+    const adminClose = document.getElementById('admin-close');
+    const navSettingsBtn = document.getElementById('settings-btn');
+    const sideSettingsBtn = document.getElementById('side-settings-btn');
+    const adminProductList = document.getElementById('admin-product-list');
+    const adminSearchInput = document.getElementById('admin-prod-search');
+
+    // Password Modal Elements
+    const passwordModal = document.getElementById('password-modal');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('admin-password-input');
+    const passwordError = document.getElementById('password-error');
+    const passwordClose = document.getElementById('password-close');
+
+    function toggleAdminModal() {
+        if (!adminModal.classList.contains('active')) {
+            // Instead of prompt, open the password modal
+            passwordModal.style.display = 'flex';
+            setTimeout(() => passwordModal.classList.add('active'), 10);
+            passwordInput.value = '';
+            passwordError.style.display = 'none';
+        } else {
+            adminModal.classList.remove('active');
+            setTimeout(() => adminModal.style.display = 'none', 500);
+        }
+    }
+
+    if (passwordForm) {
+        passwordForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (passwordInput.value === "9544856505") {
+                // Correct password
+                passwordModal.classList.remove('active');
+                setTimeout(() => {
+                    passwordModal.style.display = 'none';
+                    adminModal.style.display = 'flex';
+                    setTimeout(() => adminModal.classList.add('active'), 10);
+                    renderAdminProducts();
+                }, 500);
+            } else {
+                // Incorrect password
+                passwordError.style.display = 'block';
+                passwordInput.style.borderColor = '#ef4444';
+                setTimeout(() => {
+                    passwordInput.style.borderColor = '#eee';
+                }, 1000);
+            }
+        });
+    }
+
+    if (passwordClose) {
+        passwordClose.addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+            setTimeout(() => passwordModal.style.display = 'none', 500);
+        });
+    }
+
+    if (navSettingsBtn) navSettingsBtn.addEventListener('click', toggleAdminModal);
+    if (sideSettingsBtn) sideSettingsBtn.addEventListener('click', toggleAdminModal);
+    if (adminClose) adminClose.addEventListener('click', toggleAdminModal);
+
+    function renderAdminProducts(filter = '') {
+        const query = filter.toLowerCase();
+        const searchable = shoeCatalog.map((p, originalIdx) => ({ ...p, originalIdx }));
+
+        const filtered = searchable.filter(p =>
+            p.name.toLowerCase().includes(query) ||
+            p.brand.toLowerCase().includes(query)
+        );
+
+        adminProductList.innerHTML = filtered.map((p) => `
+            <div class="admin-prod-card quick-edit-card" id="admin-card-${p.originalIdx}">
+                <img src="${p.image}" class="admin-prod-img" alt="${p.name}">
+                <div class="admin-prod-info">
+                    <input type="text" class="quick-input q-name" value="${p.name}" placeholder="Name">
+                    <div class="quick-row">
+                        <input type="text" class="quick-input q-brand" value="${p.brand}" placeholder="Brand">
+                        <div class="price-input-wrapper">
+                            <span>₹</span>
+                            <input type="number" class="quick-input q-price" value="${p.salePrice}" placeholder="Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-prod-actions">
+                    <button class="admin-btn save-quick-btn" onclick="saveQuickEdit(${p.originalIdx})" title="Save Changes"><i class='bx bx-check'></i></button>
+                    <button class="admin-btn delete-btn" onclick="deleteProduct(${p.originalIdx})" title="Delete"><i class='bx bx-trash'></i></button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.saveQuickEdit = (index) => {
+        const card = document.getElementById(`admin-card-${index}`);
+        const name = card.querySelector('.q-name').value;
+        const brand = card.querySelector('.q-brand').value;
+        const price = parseInt(card.querySelector('.q-price').value);
+
+        if (!name || !brand || isNaN(price)) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
+
+        // Update item in catalog
+        shoeCatalog[index].name = name;
+        shoeCatalog[index].brand = brand;
+        shoeCatalog[index].salePrice = price;
+        shoeCatalog[index].updatedAt = Date.now();
+
+        // Move to top for "New Update" visibility
+        const updatedItem = shoeCatalog.splice(index, 1)[0];
+        shoeCatalog.unshift(updatedItem);
+
+        localStorage.setItem('shoeCatalog', JSON.stringify(shoeCatalog));
+        applyCatalogFilters();
+        renderAdminProducts(adminSearchInput.value);
+    };
+
+    if (adminSearchInput) {
+        adminSearchInput.addEventListener('input', (e) => {
+            renderAdminProducts(e.target.value);
+        });
+    }
+
+    window.deleteProduct = (index) => {
+        if (confirm('Are you sure you want to delete this product?')) {
+            shoeCatalog.splice(index, 1);
+            localStorage.setItem('shoeCatalog', JSON.stringify(shoeCatalog));
+            renderAdminProducts();
+            applyCatalogFilters();
+        }
+    };
+
+    // --- Original Logic Wrappers ---
+    // Ensure applyCatalogFilters is called initially for the loaded catalog
+    applyCatalogFilters();
     updateCartBadge();
 });
-
-
