@@ -594,6 +594,7 @@ nav {
     font-size: 1.1rem;
     margin-bottom: 8px;
     color: var(--primary);
+    text-transform: uppercase;
 }
 
 .product-brand {
@@ -1000,6 +1001,12 @@ nav {
     }
 }
 
+#order-shoe-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary);
+}
+
 /* Truck Button CSS */
 .truck-button {
     --color: #fff;
@@ -1031,6 +1038,7 @@ nav {
     color: var(--color);
     background: var(--background);
     border-radius: var(--br, 15px);
+    appearance: none;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     transform-style: preserve-3d;
@@ -1469,6 +1477,7 @@ nav {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
 .cart-item-info p {
@@ -1787,4 +1796,355 @@ nav {
     font-size: 0.9rem;
     color: #999;
     font-weight: 500;
+}
+
+/* Settings Styles */
+.nav-settings-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0f2f5 !important;
+    padding: 8px 15px !important;
+    border-radius: 12px !important;
+    color: var(--primary) !important;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-settings-btn i {
+    font-size: 20px;
+}
+
+.nav-settings-btn:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+.side-settings-trigger {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: #fff;
+    padding: 15px 12px;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    z-index: 3000;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.side-settings-trigger i {
+    font-size: 1.5rem;
+}
+
+.side-label {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.side-settings-trigger:hover {
+    padding-left: 20px;
+    background: var(--accent);
+}
+
+/* Update/New Badges */
+.product-img-container {
+    position: relative;
+}
+
+.update-badge,
+.new-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-badge {
+    background: #4caf50;
+    color: #fff;
+    animation: pulse-update 2s infinite;
+}
+
+.new-badge {
+    background: var(--primary);
+    color: #fff;
+}
+
+@keyframes pulse-update {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.highlight-update {
+    border: 2px solid #4caf50 !important;
+}
+
+/* Quick Edit Admin styles */
+.quick-edit-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.quick-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 3px 0;
+    font-size: 0.9rem;
+    background: transparent;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.quick-input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--accent);
+    background: #fcfcfc;
+}
+
+.q-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.quick-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.q-brand {
+    color: #888;
+    width: 100px;
+}
+
+.price-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.price-input-wrapper span {
+    font-size: 0.8rem;
+}
+
+.q-price {
+    width: 70px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.save-quick-btn {
+    background: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.save-quick-btn:hover {
+    background: #2e7d32 !important;
+    color: #fff !important;
+}
+
+.edit-full-btn {
+    background: #fff8e1 !important;
+    color: #f9a825 !important;
+}
+
+.edit-full-btn:hover {
+    background: #f9a825 !important;
+    color: #fff !important;
+}
+
+/* Theme Overrides (for potential state use) */
+body.dark-theme {
+    --primary: #f5f0ec;
+    --secondary: #1a1513;
+    --accent: #d7ccc8;
+    --gray-light: #2d2421;
+    --gray-dark: #f5f0ec;
+    --glass: rgba(26, 21, 19, 0.85);
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+/* Admin Modal specific */
+.admin-container {
+    width: 95vw !important;
+    max-width: 1000px;
+    height: 90vh !important;
+    max-height: 90vh !important;
+    border-radius: 30px;
+}
+
+.admin-box {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: auto;
+    padding: 60px 40px !important;
+    justify-content: flex-start;
+}
+
+.admin-header {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.admin-section {
+    width: 100%;
+    display: block !important;
+}
+
+#product-form .input-box input {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+.admin-product-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.admin-prod-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.admin-prod-card:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-prod-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.admin-prod-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.admin-prod-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.admin-prod-info p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.admin-prod-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.edit-btn {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.delete-btn {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.edit-btn:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+    color: #fff;
+}
+
+.cancel-btn {
+    background: #f0f2f5;
+    color: var(--primary);
+}
+
+.admin-search-box {
+    margin-top: 15px;
+}
+
+.admin-search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #f9f9f9;
+}
+
+body.dark-theme .admin-prod-card,
+body.dark-theme .admin-search-box input,
+body.dark-theme #product-form .input-box input {
+    background: #252525;
+    border-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .settings-sidebar {
+        width: 100%;
+        left: -100%;
+    }
 }
