@@ -72,6 +72,12 @@
     <main id="main-content" class="hidden">
         <header>
             <nav>
+                <div class="settings-toggle-container">
+                    <button id="settings-btn" aria-label="Settings" class="nav-settings-btn">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
                 <div class="nav-logo">
                     <img src="https://i.postimg.cc/x87Ndb4F/1000135266.png" alt="Malabar Kicks Logo">
                 </div>
@@ -96,205 +102,217 @@
         </header>
 
         <section class="hero">
-            <div class="hero-tag">What's Trending Right Now</div>
-            <h2 class="hero-title">STEP INTO<br><span class="highlight">EXCELLENCE</span></h2>
 
-            <div class="hero-image">
-                <!-- We will use a high quality shoe image here -->
-                <img src="https://i.postimg.cc/fbpnXvYs/img349.jpg" alt="Featured Shoe" class="floating">
-            </div>
-            <div class="hero-footer">
-                <div class="price">From ₹1399.00</div>
-                <button class="cta-btn">Shop Now</button>
-            </div>
-        </section>
+            <section class="hero">
+                <div class="hero-tag">What's Trending Right Now</div>
+                <h2 class="hero-title">STEP INTO<br><span class="highlight">EXCELLENCE</span></h2>
 
-        <div class="breadcrumb">
-            <a href="#">Home</a> / <span class="current">Products</span>
-        </div>
-
-        <div class="shop-container">
-            <!-- Sidebar for Filters -->
-            <aside class="sidebar">
-                <div class="filter-header">
-                    <h3>Filters</h3>
+                <div class="hero-image">
+                    <!-- We will use a high quality shoe image here -->
+                    <img src="https://i.postimg.cc/fbpnXvYs/img349.jpg" alt="Featured Shoe" class="floating">
                 </div>
-                <div class="filter-section">
-                    <h4>Price</h4>
-                    <ul>
-                        <li><label><input type="checkbox" class="price-filter" value="below-500"> Below 500</label></li>
-                        <li><label><input type="checkbox" class="price-filter" value="500-1000"> 500 - 1000</label></li>
-                        <li><label><input type="checkbox" class="price-filter" value="1000-1500"> 1000 - 1500</label>
-                        </li>
-                        <li><label><input type="checkbox" class="price-filter" value="1500-2000"> 1500 - 2000</label>
-                        </li>
-                        <li><label><input type="checkbox" class="price-filter" value="above-2000"> Above 2000</label>
-                        </li>
-                    </ul>
+                <div class="hero-footer">
+                    <div class="price">From ₹1399.00</div>
+                    <button class="cta-btn">Shop Now</button>
                 </div>
-                <div class="filter-section">
-                    <h4>Brands</h4>
-                    <ul>
-                        <li><label><input type="checkbox" class="brand-filter" value="ENV Creations"> ENV
-                                Creations</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="Nike"> Nike</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="Adidas"> Adidas</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="Puma"> Puma</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="New Balance"> New Balance</label>
-                        </li>
-                        <li><label><input type="checkbox" class="brand-filter" value="Converse"> Converse</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="Onitsuka Tiger"> Onitsuka
-                                Tiger</label></li>
-                        <li><label><input type="checkbox" class="brand-filter" value="boots"> Boots</label></li>
-                    </ul>
-                </div>
+            </section>
 
-                <div class="filter-section">
-                    <h4>Product Categories</h4>
-                    <ul>
-                        <li><label><input type="radio" name="cat" checked> All Products</label></li>
-                        <li><label><input type="radio" name="cat"> Running</label></li>
-                        <li><label><input type="radio" name="cat"> Basketball</label></li>
-                        <li><label><input type="radio" name="cat"> Lifestyle</label></li>
-                    </ul>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Offers</h4>
-                    <ul>
-                        <li><label><input type="checkbox"> 10% Off</label></li>
-                        <li><label><input type="checkbox"> Special Deals</label></li>
-                    </ul>
-                </div>
-            </aside>
-
-            <div class="catalog-search" style="margin: 10px 0 14px 0;">
-                <input id="product-search" type="text" placeholder="Search shoes by name or price (example: 1200)"
-                    style="width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;">
+            <div class="breadcrumb">
+                <a href="#">Home</a> / <span class="current">Products</span>
             </div>
 
-            <!-- Main Product Grid (rendered by script.js) -->
-            <section class="products-grid" id="products-grid"></section>
-        </div>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-            <div class="testimonial-header">
-                <h2 class="testimonial-title">What our customers say</h2>
-                <p class="testimonial-subtitle">Don't Just Take Our Word for It</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
+            <div class="shop-container">
+                <!-- Sidebar for Filters -->
+                <aside class="sidebar">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
                     </div>
-                    <p class="comment">"The comfort and style of these kicks are unmatched! My go-to for daily wear."
-                    </p>
-                    <h4 class="customer-name">Rahul Sharma</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bx-star'></i>
+                    <div class="filter-section">
+                        <h4>Price</h4>
+                        <ul>
+                            <li><label><input type="checkbox" class="price-filter" value="below-500"> Below 500</label>
+                            </li>
+                            <li><label><input type="checkbox" class="price-filter" value="500-1000"> 500 - 1000</label>
+                            </li>
+                            <li><label><input type="checkbox" class="price-filter" value="1000-1500"> 1000 -
+                                    1500</label>
+                            </li>
+                            <li><label><input type="checkbox" class="price-filter" value="1500-2000"> 1500 -
+                                    2000</label>
+                            </li>
+                            <li><label><input type="checkbox" class="price-filter" value="above-2000"> Above
+                                    2000</label>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="comment">"Absolutely love the premium feel. The classic dark sneakers look even better in
-                        person."</p>
-                    <h4 class="customer-name">Priya Nair</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
+                    <div class="filter-section">
+                        <h4>Brands</h4>
+                        <ul>
+                            <li><label><input type="checkbox" class="brand-filter" value="ENV Creations"> ENV
+                                    Creations</label></li>
+                            <li><label><input type="checkbox" class="brand-filter" value="Nike"> Nike</label></li>
+                            <li><label><input type="checkbox" class="brand-filter" value="Adidas"> Adidas</label></li>
+                            <li><label><input type="checkbox" class="brand-filter" value="Puma"> Puma</label></li>
+                            <li><label><input type="checkbox" class="brand-filter" value="New Balance"> New
+                                    Balance</label>
+                            </li>
+                            <li><label><input type="checkbox" class="brand-filter" value="Converse"> Converse</label>
+                            </li>
+                            <li><label><input type="checkbox" class="brand-filter" value="Onitsuka Tiger"> Onitsuka
+                                    Tiger</label></li>
+                            <li><label><input type="checkbox" class="brand-filter" value="boots"> Boots</label></li>
+                        </ul>
                     </div>
-                    <p class="comment">"Fits perfectly and the build quality is solid. Worth every rupee."</p>
-                    <h4 class="customer-name">Arjun Varma</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bx-star'></i>
-                    </div>
-                    <p class="comment">"Fast delivery and great customer support. The Air Zoom Pegasus is just amazing."
-                    </p>
-                    <h4 class="customer-name">Sneha Kapoor</h4>
-                </div>
-            </div>
-        </section>
 
-        <!-- Cart Sidebar Panel -->
-        <div id="cart-sidebar" class="cart-sidebar">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <button id="close-cart-btn"><i class='bx bx-x'></i></button>
-            </div>
-            <div class="cart-items" id="cart-items-container">
-                <!-- Cart items will be injected here by JS -->
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cart-total-price">₹0</span>
+                    <div class="filter-section">
+                        <h4>Product Categories</h4>
+                        <ul>
+                            <li><label><input type="radio" name="cat" checked> All Products</label></li>
+                            <li><label><input type="radio" name="cat"> Running</label></li>
+                            <li><label><input type="radio" name="cat"> Basketball</label></li>
+                            <li><label><input type="radio" name="cat"> Lifestyle</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Offers</h4>
+                        <ul>
+                            <li><label><input type="checkbox"> 10% Off</label></li>
+                            <li><label><input type="checkbox"> Special Deals</label></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="catalog-search" style="margin: 10px 0 14px 0;">
+                    <input id="product-search" type="text" placeholder="Search shoes by name or price (example: 1200)"
+                        style="width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;">
                 </div>
-                <!-- Proceed to Checkout triggers Order Form via JS -->
-                <button id="checkout-btn" class="cta-btn checkout-btn">Proceed to Checkout</button>
+
+                <!-- Main Product Grid (rendered by script.js) -->
+                <section class="products-grid" id="products-grid"></section>
             </div>
-        </div>
-        <div id="cart-overlay" class="cart-overlay"></div>
-        <!-- Social Media Footer -->
-        <footer class="social-footer">
-            <ul class="wrapper">
-                <li class="icon facebook">
-                    <a href="#" target="_blank">
-                        <span class="tooltip">Facebook</span>
-                        <span><i class="fab fa-facebook-f"></i></span>
-                    </a>
-                </li>
-                <li class="icon twitter">
-                    <a href="#" target="_blank">
-                        <span class="tooltip">Twitter</span>
-                        <span><i class="fab fa-x-twitter"></i></span>
-                    </a>
-                </li>
-                <li class="icon instagram">
-                    <a href="https://www.instagram.com/malabar_kicks?igsh=MTNmbndmeWcxZmQ2aQ==" target="_blank">
-                        <span class="tooltip">Instagram</span>
-                        <span><i class="fab fa-instagram"></i></span>
-                    </a>
-                </li>
-                <li class="icon whatsapp">
-                    <a href="https://wa.me/919544856505" target="_blank">
-                        <span class="tooltip">WhatsApp</span>
-                        <span><i class="fab fa-whatsapp"></i></span>
-                    </a>
-                </li>
-                <li class="icon github">
-                    <a href="#" target="_blank">
-                        <span class="tooltip">Github</span>
-                        <span><i class="fab fa-github"></i></span>
-                    </a>
-                </li>
-                <li class="icon youtube">
-                    <a href="#" target="_blank">
-                        <span class="tooltip">Youtube</span>
-                        <span><i class="fab fa-youtube"></i></span>
-                    </a>
-                </li>
-            </ul>
-            <p class="footer-credit">&copy; 2026 MALABAR KICKS. All rights reserved.</p>
-        </footer>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <div class="testimonial-header">
+                    <h2 class="testimonial-title">What our customers say</h2>
+                    <p class="testimonial-subtitle">Don't Just Take Our Word for It</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <p class="comment">"The comfort and style of these kicks are unmatched! My go-to for daily
+                            wear."
+                        </p>
+                        <h4 class="customer-name">Rahul Sharma</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <p class="comment">"Absolutely love the premium feel. The classic dark sneakers look even better
+                            in
+                            person."</p>
+                        <h4 class="customer-name">Priya Nair</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <p class="comment">"Fits perfectly and the build quality is solid. Worth every rupee."</p>
+                        <h4 class="customer-name">Arjun Varma</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <p class="comment">"Fast delivery and great customer support. The Air Zoom Pegasus is just
+                            amazing."
+                        </p>
+                        <h4 class="customer-name">Sneha Kapoor</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Sidebar Panel -->
+            <div id="cart-sidebar" class="cart-sidebar">
+                <div class="cart-header">
+                    <h2>Your Cart</h2>
+                    <button id="close-cart-btn"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Cart items will be injected here by JS -->
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cart-total-price">₹0</span>
+                    </div>
+                    <!-- Proceed to Checkout triggers Order Form via JS -->
+                    <button id="checkout-btn" class="cta-btn checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Social Media Footer -->
+            <footer class="social-footer">
+                <ul class="wrapper">
+                    <li class="icon facebook">
+                        <a href="#" target="_blank">
+                            <span class="tooltip">Facebook</span>
+                            <span><i class="fab fa-facebook-f"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon twitter">
+                        <a href="#" target="_blank">
+                            <span class="tooltip">Twitter</span>
+                            <span><i class="fab fa-x-twitter"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon instagram">
+                        <a href="https://www.instagram.com/malabar_kicks?igsh=MTNmbndmeWcxZmQ2aQ==" target="_blank">
+                            <span class="tooltip">Instagram</span>
+                            <span><i class="fab fa-instagram"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon whatsapp">
+                        <a href="https://wa.me/919544856505" target="_blank">
+                            <span class="tooltip">WhatsApp</span>
+                            <span><i class="fab fa-whatsapp"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon github">
+                        <a href="#" target="_blank">
+                            <span class="tooltip">Github</span>
+                            <span><i class="fab fa-github"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon youtube">
+                        <a href="#" target="_blank">
+                            <span class="tooltip">Youtube</span>
+                            <span><i class="fab fa-youtube"></i></span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="footer-credit">&copy; 2026 MALABAR KICKS. All rights reserved.</p>
+            </footer>
     </main>
 
     <!-- Auth Modal -->
@@ -450,8 +468,70 @@
         </div>
     </div>
 
+    <!-- Password Protection Modal -->
+    <div id="password-modal" class="auth-modal">
+        <div class="auth-container password-container"
+            style="max-width: 400px; height: auto; min-height: 300px; border-radius: 30px; overflow: hidden;">
+            <div class="form-box"
+                style="width: 100%; right: 0; padding: 40px; justify-content: center; display: flex; flex-direction: column;">
+                <form id="password-form">
+                    <h2 style="margin-bottom: 10px; font-weight: 800; color: var(--primary); text-align: center;">Admin
+                        Access</h2>
+                    <p style="margin-bottom: 25px; color: #666; text-align: center; font-size: 0.9rem;">Security check
+                        required to access settings.</p>
+                    <div class="input-box" style="margin-bottom: 20px; position: relative;">
+                        <input type="password" id="admin-password-input" placeholder="Enter Password" required
+                            style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; transition: all 0.3s ease;" />
+                        <i class="bx bxs-lock-alt"
+                            style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.2rem;"></i>
+                    </div>
+                    <button type="submit" class="auth-btn"
+                        style="width: 100%; border-radius: 15px; height: 50px; font-weight: 600;">Authorize
+                        Access</button>
+                    <p id="password-error"
+                        style="color: #ef4444; margin-top: 15px; font-size: 0.85rem; text-align: center; display: none; font-weight: 500;">
+                        <i class='bx bx-error-circle'></i> Incorrect password! Please try again.
+                    </p>
+                </form>
+            </div>
+            <button id="password-close" class="auth-close-btn" type="button"
+                style="top: 15px; right: 15px; width: 40px; height: 40px; font-size: 1.5rem;"><i
+                    class='bx bx-x'></i></button>
+        </div>
+    </div>
+
+    <!-- Admin/Settings Modal -->
+    <div id="admin-modal" class="auth-modal">
+        <div class="auth-container admin-container">
+            <div class="form-box admin-box" style="width: 100%; right: 0;">
+                <div class="admin-header">
+                    <h1>Manage Inventory</h1>
+                </div>
+
+
+                <!-- Product Management List -->
+                <div id="admin-list-section" class="admin-section">
+                    <div class="admin-search-box">
+                        <input type="text" id="admin-prod-search" placeholder="Search inventory...">
+                    </div>
+                    <div class="admin-product-list" id="admin-product-list">
+                        <!-- Products will be listed here -->
+                    </div>
+                </div>
+            </div>
+            <button id="admin-close" class="auth-close-btn" type="button"><i class='bx bx-x'></i></button>
+        </div>
+    </div>
+
+    <!-- Side Settings Trigger -->
+    <div class="side-settings-trigger" id="side-settings-btn">
+        <i class='bx bx-cog'></i>
+        <span class="side-label">Admin</span>
+    </div>
+
     <script src='https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js'></script>
     <script src="script.js"></script>
 </body>
+
 
 </html>
